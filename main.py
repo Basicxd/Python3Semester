@@ -18,8 +18,11 @@ def test(x):
         return "something went wrong"
 
 
+
+now = datetime.now()
+
 while True:
-    data = "Current time " + str(test(0))  # + '\n' add if needed
+    data = "Actions: " + str(test(0)) + '\n' + "Time: " + str(now.strftime("%m/%d/%Y, %H:%M:%S"))  # + '\n' add if needed
     s.sendto(bytes(data, "UTF-8"), ('<broadcast>', BROADCAST_TO_PORT))
     print(data)
     time.sleep(1)
